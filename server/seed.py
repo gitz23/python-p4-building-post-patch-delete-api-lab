@@ -28,6 +28,9 @@ with app.app_context():
     for i in range(200):
 
         name = fake.first_name()
+        # ensures we don't have duplicate names
+        # This is a while loop that continues generating a new fake first name as long as the generated name is already in the names list.
+        #  It ensures that you don't have duplicates in your list.
         while name in names:
             name = fake.first_name()
         names.append(name)
